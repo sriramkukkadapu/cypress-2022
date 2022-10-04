@@ -15,10 +15,33 @@ npx cypress run --record --spec cypress/e2e/examples/Test1.cy.js   --key fd4a792
 
 # We use below package to get xpath in cypress
 npm install cypress-xpath
+after installing import this in support/e2e.js
+import 'cypress-xpath';
 
 # To get autocomplete during the test script writing
+```javascript
 /// <reference types="Cypress" />
+```
 Add this line on top in the script file
+
+# important methods
+- To Enter Text in a input : cy.xpath("").type("cypress")
+- To send enterkey into a input box: cy.xpath('').type("{enter}");
+- Add inline timeout in script for a specific command: 
+cy.xpath("<xpath>", {timeout:50000}).type("sample text");
+
+# Trigger tests automatically on File change - watchForFilechanges
+Add this line in support/e2e.js 
+watchForFileChanges: true
+
+# Change Default timeout in config 
+Add this line in support/e2e.js 
+defaultCommandTimeout: 10000
+
+
+
+
+
 
 
 
