@@ -3,6 +3,7 @@
 it('', function(){
     
     cy.visit("https://www.google.co.in");
-    cy.xpath("//input[@title='Search']", {timeout:50000}).type("cypress").type("{enter}");
+    cy.xpath("//input[@title='Search']").type("cypress").type("{enter}");
+    cy.contains("Videos").click();
 })
 
